@@ -1,0 +1,110 @@
+<div class="question">
+  <h1>Create Question</h1>
+
+  <div class="login--content">
+    <mat-card class="login--card">
+      <form class="login--form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h1>Question data</h1>
+        <mat-form-field class="input">
+          <mat-label>Content</mat-label>
+          <textarea
+            formControlName="content"
+            ngDefaultControl
+            matInput
+            type="text"
+          ></textarea>
+        </mat-form-field>
+        <mat-form-field class="input">
+          <mat-label>Topic</mat-label>
+          <mat-select formControlName="topic_id" ngDefaultControl type="text">
+            <mat-option
+              *ngFor="let item of topics; let i = index"
+              [value]="item.id"
+              >{{ item.name }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="btn-submit"
+          class="book-create-button"
+        >
+          create
+        </button>
+      </form>
+      <div >
+        <p>List of answers:</p>
+
+        <div class="add-answers-form" [formGroup]="formAnswer">
+          <ng-container formArrayName="answers">
+            <ng-container
+              *ngFor="let answerForm of answers.controls; let i = index"
+            >
+              <div class="answer-form-row" [formGroupName]="i">
+                <mat-form-field appearance="fill">
+                  <textarea
+                    matInput
+                    formControlName="content"
+                    placeholder="Content"
+                  ></textarea>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <mat-select formControlName="is_correct" placeholder="False">
+                    <mat-option value="false">False</mat-option>
+                    <mat-option value="true">True</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                  <textarea
+                    matInput
+                    formControlName="explanation"
+                    placeholder="Explanation"
+                  ></textarea>
+                </mat-form-field>
+                <mat-icon class="delete-btn" (click)="deleteAnswer(i)">
+                  delete_forever</mat-icon
+                >
+              </div>
+            </ng-container>
+          </ng-container>
+
+          <button mat-mini-fab (click)="addAnswer()">
+            <mat-icon class="add-course-btn">add</mat-icon>
+          </button>
+        </div>
+
+        <p>List of packages:</p>
+        <div class="add-answers-form" [formGroup]="formPackage">
+          <ng-container formArrayName="package_ids">
+            <ng-container
+              *ngFor="let packageForm of packages.controls; let i = index"
+            >
+              <div class="answer-form-row" [formGroupName]="i">
+                <mat-form-field appearance="fill">
+                  <mat-select formControlName="id" placeholder="1">
+                    <mat-option
+                      *ngFor="let package of packageList; let i = index"
+                      [value]="package.id"
+                      >{{ package.name }}</mat-option
+                    >
+                  </mat-select>
+                </mat-form-field>
+
+                <mat-icon class="delete-btn" (click)="deletePackage(i)">
+                  delete_forever</mat-icon
+                >
+              </div>
+            </ng-container>
+          </ng-container>
+
+          <button mat-mini-fab (click)="addPackage()">
+            <mat-icon class="add-course-btn">add</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

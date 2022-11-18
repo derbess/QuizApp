@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <mat-card class="card">
+        <form class="create" [formGroup]="form" (ngSubmit)="onSubmit()">
+            <h1>Create New Package</h1>
+            <mat-form-field class="input">
+                <mat-label>Name</mat-label>
+                <input formControlName="name" ngDefaultControl matInput type="text" />
+              </mat-form-field>
+        
+             
+              <button mat-raised-button color="primary" type="submit" class="btn-submit" class="book-create-button">
+                Create Package
+              </button>
+        
+        </form>
+    </mat-card>
+</div>

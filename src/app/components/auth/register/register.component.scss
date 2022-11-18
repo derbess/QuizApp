@@ -1,0 +1,83 @@
+.header{
+    display: flex;
+    // background-color: #9c5518;
+    justify-content: center;
+    img {
+        max-height: 30vh;
+        // border: gold 2px dashed;
+        // border-radius: 1px;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.register--content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+    background-color: #99cfd6;
+
+    // background-color: antiquewhite;
+}
+.register{
+    display: flex;
+    // background-color: #9c5518;
+    background-color: #99cfd6;
+    height: 90vh;
+
+    justify-content: center;
+    flex-direction: column;
+    
+}
+// .register--card{
+//     width: 50%;
+//     height: 55%;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-around;
+// }
+// .register--form{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-around;
+//     align-items: center;
+//     width: 60%;
+//     background-color: #5a3f11;
+//     mat-label {
+//         color: white;
+//     }
+// }
+.mat-card-signup {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    // justify-items: center;
+    justify-content: space-around;
+    align-items: center;
+    // background-color: #EF962D;
+    background-color: #008899;
+
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    button {
+        margin-top: 30px;
+        width: 50%;
+        background-color: black;
+
+    }
+}
+// .input{
+//     display: flex;
+//     justify-content: space-around;
+//     align-items: center;
+//     // justify-items: ;
+//     flex-direction: column;
+//     // width: 75%;
+//     input {
+//         max-width: 350px;
+//     }
+// }

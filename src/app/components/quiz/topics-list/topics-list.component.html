@@ -1,0 +1,43 @@
+<div class="packages">
+  <h1>Create Topic</h1>
+  
+    <div class="login--content">
+      <mat-card class="login--card">
+        <form class="login--form" [formGroup]="form" (ngSubmit)="onSubmit()">
+          <h1>Enter name of Topic</h1>
+          <mat-form-field class="input">
+            <mat-label>Name</mat-label>
+            <input
+              formControlName="name"
+              ngDefaultControl
+              matInput
+              type="text"
+            />
+          </mat-form-field>
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            class="btn-submit"
+            class="book-create-button"
+          >
+            create
+          </button>
+        </form>
+      </mat-card>
+    </div>
+    <h1>List of Existing Topics:</h1>
+    <div class="post-list-wrapper">
+      <mat-card class="post-wrapper" *ngFor="let item of list; let i = index">
+        <h5>{{ item.id }}</h5>
+        <img
+          src="https://static.vecteezy.com/system/resources/thumbnails/001/200/107/small/book.png"
+          alt=""
+        />
+        {{ item.name }}
+      </mat-card>
+    </div>
+    
+  
+  </div>
+  

@@ -1,0 +1,12 @@
+.nav {
+    background-color: #4dacb8;
+    
+}
+.nav__items{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    a {
+        color: black;
+    }   
+}

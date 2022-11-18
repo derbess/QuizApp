@@ -1,0 +1,44 @@
+<div class="register">
+  <div class="header">
+    <!-- <img
+      mat-card-image
+      src="https://arthistoryteachingresources.org/wp-content/uploads/2016/05/portrait-gallery1.jpg?w=640"
+    /> -->
+  </div>
+  <div class="register--content">
+    <mat-card class="mat-card-signup">
+      <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <h1>Register</h1>
+        <mat-form-field class="input">
+          <mat-label>Username</mat-label>
+          <input
+            formControlName="username"
+            ngDefaultControl
+            matInput
+            type="text"
+          />
+        </mat-form-field>
+        <mat-form-field class="input">
+          <mat-label>Password</mat-label>
+          <input
+            formControlName="password"
+            ngDefaultControl
+            matInput
+            type="password"
+          />
+        </mat-form-field>
+        <mat-form-field class="input">
+          <mat-label>Name</mat-label>
+          <input formControlName="name" ngDefaultControl matInput type="text" />
+        </mat-form-field>
+        <mat-form-field class="input">
+          <mat-label>Surname</mat-label>
+          <input formControlName="surname" ngDefaultControl matInput type="text" />
+        </mat-form-field>
+        
+        
+        <button mat-raised-button color="primary" type="submit">Create</button>
+      </form>
+    </mat-card>
+  </div>
+</div>

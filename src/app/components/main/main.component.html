@@ -1,0 +1,19 @@
+<nav mat-tab-nav-bar class="nav">
+    <div class="nav__items">
+      <div>
+      <a mat-tab-link [routerLink]="['/auth/login']" *ngIf="!isSignedIn"> Login </a>
+      <a mat-tab-link [routerLink]="['/auth/signup']" *ngIf="!isSignedIn"> Register </a>
+      <a mat-tab-link [routerLink]="['/quiz/list']"> Quizes </a>
+      <a mat-tab-link [routerLink]="['/quiz/question/create']"> Create Quiz </a>
+      <a mat-tab-link [routerLink]="['/quiz/packages']"> Packeges </a>
+      <a mat-tab-link [routerLink]="['/quiz/topics']"> Topics </a>
+      
+    
+    </div>
+    <div>
+      <a mat-tab-link (click) = "logout()" [routerLink]="['/auth/login']">Logout </a>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
